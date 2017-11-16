@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import os
+import argparse
 
 def parseArgs():
     parser = argparse.ArgumentParser()
@@ -17,6 +18,9 @@ def main():
         arguments = parseArgs()
         path = '/proc'
         procDir = os.listdir(path)
+        procDir = [processId for processId in procDir if processId.isdigit()]
+        for process in procDir:
+            
     except Exception as e:
         print (e)
 
